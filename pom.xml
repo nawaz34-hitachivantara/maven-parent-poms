@@ -92,8 +92,6 @@
 
     <activemq.version>5.18.4</activemq.version>
 
-    <derby.version>10.14.2.0</derby.version>
-
     <jacoco-maven-plugin.version>0.8.8</jacoco-maven-plugin.version>
     <maven-clean-plugin.version>3.1.0</maven-clean-plugin.version>
     <maven-deploy-plugin.version>2.8.2</maven-deploy-plugin.version>
@@ -138,6 +136,7 @@
     <karaf-maven-plugin.primaryFeatureName>${project.artifactId}</karaf-maven-plugin.primaryFeatureName>
     <karaf-maven-plugin.prerequisiteFeatures></karaf-maven-plugin.prerequisiteFeatures>
 
+    <xmlbeans.version>5.2.0</xmlbeans.version>
     <nodejs.version>v10.0.0</nodejs.version>
     <npm.version>5.7.1</npm.version>
     <requirejs.version>2.3.6</requirejs.version>
@@ -167,6 +166,7 @@
     <fasterxml-jackson.version>2.14.2</fasterxml-jackson.version>
     <hv-jackson-dataformat.version>2.14.1</hv-jackson-dataformat.version>
     <fasterxml-jackson-databind.version>2.14.2</fasterxml-jackson-databind.version>
+    <fasterxml-jackson.non-osgi.version>2.17.2</fasterxml-jackson.non-osgi.version>
     <dom4j.version>2.1.4</dom4j.version>
     <jaxen.version>1.1.6</jaxen.version>
     <xstream.version>1.4.20</xstream.version>
@@ -181,9 +181,9 @@
     <commons-codec.version>1.15</commons-codec.version>
     <commons-text.version>1.10.0</commons-text.version>
     <commons-net.version>3.9.0</commons-net.version>
-    <aws-java-sdk.version>1.11.516</aws-java-sdk.version>
-    <jetty.version>9.4.51.v20230217</jetty.version>
-    <jetty-server.version>9.4.51.v20230217</jetty-server.version>
+    <aws-java-sdk.version>1.12.759</aws-java-sdk.version>
+    <jetty.version>9.4.54.v20240208</jetty.version>
+    <jetty-server.version>9.4.54.v20240208</jetty-server.version>
     <httpclient.version>4.5.14</httpclient.version>
     <httpcore.version>4.4.11</httpcore.version>
     <kafka-clients.version>3.4.0</kafka-clients.version>
@@ -377,6 +377,7 @@
     <commons-io.version>2.16.1</commons-io.version>
     <rome.version>1.18.0</rome.version>
     <rhino.version>1.7.13</rhino.version>
+    <snakeyaml.version>2.2</snakeyaml.version>
     <safeyaml.version>1.34.1</safeyaml.version>
     <safeyaml.bundle.version>1.34.1</safeyaml.bundle.version>
     <sqlite-jdbc.version>3.41.2.2</sqlite-jdbc.version>
@@ -650,6 +651,11 @@
         <version>${fasterxml-jackson.version}</version>
       </dependency>
       <dependency>
+        <groupId>com.fasterxml.jackson.dataformat</groupId>
+        <artifactId>jackson-dataformat-yaml</artifactId>
+        <version>${fasterxml-jackson.non-osgi.version}</version>
+      </dependency>
+      <dependency>
         <groupId>org.hitachivantara</groupId>
         <artifactId>jackson-dataformat-yaml</artifactId>
         <version>${hv-jackson-dataformat.version}</version>
@@ -673,6 +679,12 @@
         <groupId>com.fasterxml.jackson.datatype</groupId>
         <artifactId>jackson-datatype-jsr310</artifactId>
         <version>${fasterxml-jackson.version}</version>
+      </dependency>
+      <!-- PPP-5163 comment replacing 'safeyaml' with 'snakeyaml' v2.0+ -->
+      <dependency>
+        <groupId>org.yaml</groupId>
+        <artifactId>snakeyaml</artifactId>
+        <version>${snakeyaml.version}</version>
       </dependency>
 
       <!--PPP-4865 replacing snakeyaml with safeyaml-->
